@@ -22,7 +22,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y wmctrl
 
 COPY *.deb /
-RUN apt-get -y install ./chrome64_60.0.3112.90.deb
+RUN apt-get -y install ./chrome64_56.0.2924.87.deb
 
 COPY bootstrap.sh /
 RUN chmod a+x ./bootstrap.sh

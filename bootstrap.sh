@@ -9,6 +9,7 @@ readonly G_LOG_E='[ERROR]'
 main() {
     launch_xvfb
     launch_window_manager
+    run_chrome &
     run_vnc_server
 }
 
@@ -16,7 +17,7 @@ launch_xvfb() {
     # Set defaults if the user did not specify envs.
     export DISPLAY=${XVFB_DISPLAY:-:1}
     local screen=${XVFB_SCREEN:-0}
-    local resolution=${XVFB_RESOLUTION:-1280x1024x24}
+    local resolution=${XVFB_RESOLUTION:-1920x1080x24}
     local timeout=${XVFB_TIMEOUT:-5}
 
     # Start and wait for either Xvfb to be fully up or we hit the timeout.
@@ -71,6 +72,14 @@ run_vnc_server() {
 
     x11vnc -display ${DISPLAY} -forever ${passwordArgument} &
     wait $!
+}
+
+run_chrome() {
+    echo "About to start Chrome in 5 seconds..."
+    sleep 5
+
+    echo "Starting Chrome"
+    /opt/google/chrome/chrome
 }
 
 control_c() {
