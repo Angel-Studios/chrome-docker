@@ -75,8 +75,8 @@ run_vnc_server() {
 }
 
 run_chrome() {
-    echo "About to start Chrome in 5 seconds..."
-    sleep 5
+    # echo "About to start Chrome in 5 seconds..."
+    # sleep 5
 
     echo "Starting Chrome"
     /opt/google/chrome/chrome
