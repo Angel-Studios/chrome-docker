@@ -14,6 +14,9 @@ main() {
 }
 
 launch_xvfb() {
+    # Remove X11 lock file
+    rm -f /tmp/.X*-lock
+
     # Set defaults if the user did not specify envs.
     export DISPLAY=${XVFB_DISPLAY:-:1}
     local screen=${XVFB_SCREEN:-0}

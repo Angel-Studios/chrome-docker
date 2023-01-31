@@ -20,8 +20,3 @@ sudo docker run -p 5900:5900 -e VNC_SERVER_PASSWORD=password --user apps --privi
 ```
 sudo apt-get install krdc
 ```
-
-- To stop the Docker container:
-```
-docker stop $(docker ps -a -q)
-```
